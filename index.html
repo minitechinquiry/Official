@@ -273,82 +273,39 @@
             transform: rotate(90deg);
         }
 
-        /* Full Video Background Section */
-        .video-background {
+        /* Blue Background Hero Section - Replaces video background */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--light);
+            padding: 180px 0 100px;
+            text-align: center;
             position: relative;
-            width: 100%;
-            height: 100vh;
             overflow: hidden;
             margin-top: 80px;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
         }
 
-        #agencyVideo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-        }
-
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(2, 29, 87, 0.8) 0%);
-            z-index: 0;
-        }
-
-        .video-content {
+        .hero-content {
             position: relative;
             z-index: 1;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
-        .video-content h1 {
+        .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
             color: white;
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
 
-        .video-content p {
+        .hero-content p {
             font-size: 1.5rem;
             margin-bottom: 30px;
-            max-width: 700px;
-        }
-
-        /* Hero Section - Modified to be after video */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: var(--light);
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero h1 {
-            color: var(--light);
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .hero-btns {
@@ -357,13 +314,13 @@
             gap: 20px;
         }
 
-        .hero .btn {
+        .hero-btns .btn {
             background: var(--light);
             color: var(--primary);
         }
 
-        .hero .btn:hover {
-         
+        .hero-btns .btn:hover {
+            background: transparent;
             color: var(--light);
             border-color: var(--light);
         }
@@ -925,6 +882,14 @@
             .service-options {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                font-size: 1.3rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -953,15 +918,11 @@
                 display: block;
             }
             
-            .hero h1 {
+            .hero-content h1 {
                 font-size: 2.5rem;
             }
             
-            .video-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .video-content p {
+            .hero-content p {
                 font-size: 1.2rem;
             }
             
@@ -1018,11 +979,11 @@
                 font-size: 1.8rem;
             }
             
-            .video-content h1 {
+            .hero-content h1 {
                 font-size: 2rem;
             }
             
-            .video-content p {
+            .hero-content p {
                 font-size: 1rem;
             }
             
@@ -1079,18 +1040,14 @@
         </div>
     </header>
 
-    <section class="video-background" id="home">
-        <div class="video-overlay"></div>
-        <video autoplay muted loop id="agencyVideo">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-geometric-pattern-background-1715-large.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-        <div class="video-content" data-aos="fade-up">
+    <!-- Blue Background Hero Section (replaces video background) -->
+    <section class="hero-section" id="home">
+        <div class="hero-content" data-aos="fade-up">
             <h1>Professional Digital Solutions for Startups & Colleges</h1>
             <p>We provide affordable video editing, poster design, and web development services tailored to your needs and budget.</p>
             <div class="hero-btns">
                 <a href="#services" class="btn pulse">Explore Our Services</a>
-                
+                <a href="#contact" class="btn btn-secondary">Get a Quote</a>
             </div>
         </div>
     </section>
