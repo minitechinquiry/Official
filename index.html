@@ -5,19 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MiniTech - Smart Web Solutions Agency</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- GSAP (GreenSock Animation Platform) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
@@ -155,15 +151,13 @@
 </head>
 <body class="bg-white">
 
-    <!-- Header -->
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 p-3 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" id="home-link" class="flex items-center space-x-3">
-                <img src="logop.png" alt="MiniTech Logo" class="h-14">
-                <span class="text-white font-space font-bold text-xl">MiniTech</span>
+                <img src="logop.png" alt="MiniTech Logo" class="h-16">
+                <span class="text-white font-space font-bold text-3xl">Mini-Tech</span>
             </a>
             <nav class="hidden md:flex space-x-8 items-center">
-                <!-- Services Dropdown -->
                 <div class="relative group">
                     <button class="text-white hover:text-gray-300 transition-colors flex items-center">
                         Services <i data-feather="chevron-down" class="w-4 h-4 ml-1"></i>
@@ -185,19 +179,17 @@
         </div>
     </header>
     
-    <!-- Mobile Menu Overlay -->
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
     
-    <!-- Mobile Menu Panel -->
     <div id="mobile-menu" class="fixed top-0 right-0 w-4/5 max-w-sm h-full bg-slate-900 z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
         <div class="p-5 flex flex-col h-full">
             <div class="flex justify-between items-center mb-10">
                  <a href="#" id="mobile-home-link" class="flex items-center space-x-2">
-                    <img src="logop.png" alt="MiniTech Logo" class="h-12">
-                    <span class="text-white font-space font-bold text-lg">MiniTech</span>
-                </a>
+                     <img src="logop.png" alt="MiniTech Logo" class="h-12">
+                     <span class="text-white font-space font-bold text-lg">MiniTech</span>
+                 </a>
                 <button id="mobile-menu-close-button">
-                    <i data-feather="x" class="text-white w-7 h-7"></i>
+                     <i data-feather="x" class="text-white w-7 h-7"></i>
                 </button>
             </div>
             <div class="flex flex-col space-y-4">
@@ -207,25 +199,22 @@
                  <a href="#" id="mobile-nav-app-link" class="mobile-menu-link text-white text-lg font-bold hover:bg-slate-800 px-4 py-2 rounded-md">App Development</a>
                  <a href="#" id="mobile-nav-uiux-link" class="mobile-menu-link text-white text-lg font-bold hover:bg-slate-800 px-4 py-2 rounded-md">UI/UX Design</a>
             </div>
-             <div class="mt-auto">
+              <div class="mt-auto">
                  <a href="#contact" class="mobile-menu-link text-white text-lg font-bold bg-blue-600 hover:bg-blue-700 w-full text-center block px-4 py-3 rounded-md">Contact Us</a>
             </div>
         </div>
     </div>
     
-    <!-- This div holds the main content of the home page -->
     <div id="main-content">
         <main class="pt-[72px]"> 
             <section id="hero" class="min-h-screen w-full relative flex items-center justify-center text-center -mt-[72px]">
-                <!-- Background Video -->
                 <div class="absolute inset-0 z-0 overflow-hidden">
-                     <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                        <source src="vodeo.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                      <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                          <source src="vodeo.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
                     <div class="absolute inset-0 bg-black/50"></div>
                 </div>
-                <!-- Foreground Content -->
                 <div class="relative z-10 p-8">
                     <div class="max-w-3xl mx-auto">
                         <h1 class="hero-el text-4xl md:text-5xl lg:text-6xl font-bold font-space text-white mb-4">
@@ -290,6 +279,28 @@
                                     <span class="text-xs font-bold text-blue-500 bg-blue-100 px-2 py-1 rounded-full animate-throb">VIEW DETAILS</span>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="py-20 md:py-28 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="about-el text-center md:text-left">
+                            <h2 class="section-title font-space text-4xl md:text-5xl font-bold text-slate-900 mb-6">About Mini-Tech</h2>
+                            <p class="text-slate-600 mb-4 leading-relaxed">
+                                Founded in 2025, Mini-Tech was born from a passion for empowering startups, colleges, and growing businesses with high-quality, affordable digital solutions. We believe that a powerful online presence shouldn't be a luxury.
+                            </p>
+                            <p class="text-slate-600 mb-6 leading-relaxed">
+                                Our team of dedicated developers, designers, and marketers works collaboratively to transform your vision into a digital reality. We're not just a service provider; we're your partner in growth, committed to delivering results that matter.
+                            </p>
+                            <a href="#contact" class="cta-btn inline-block text-white font-bold py-3 px-8 rounded-lg text-lg">
+                                <span>Work With Us</span>
+                            </a>
+                        </div>
+                        <div class="about-el">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" alt="Our Team Collaborating" class="rounded-2xl shadow-xl w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
@@ -376,12 +387,11 @@
         </main>
     </div>
     
-    <!-- HIDDEN digital marketing page content -->
     <div id="digital-marketing-page" class="hidden">
-         <main class="pt-[72px]">
+        <main class="pt-[72px]">
              <button class="back-to-main-btn fixed top-24 left-4 z-50 cta-btn rounded-full p-3 shadow-lg hover:scale-110 transition-transform back-btn-animation">
-                <i data-feather="arrow-left" class="text-white"></i>
-            </button>
+                 <i data-feather="arrow-left" class="text-white"></i>
+             </button>
             <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white overflow-hidden flex items-center justify-center text-center">
                 <div class="absolute inset-0 z-0">
                     <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover">
@@ -461,9 +471,8 @@
         </main>
     </div>
     
-    <!-- HIDDEN web development page content -->
     <div id="web-development-page" class="hidden">
-         <main class="pt-[72px]">
+        <main class="pt-[72px]">
             <button class="back-to-main-btn fixed top-24 left-4 z-50 cta-btn rounded-full p-3 shadow-lg hover:scale-110 transition-transform back-btn-animation">
                 <i data-feather="arrow-left" class="text-white"></i>
             </button>
@@ -531,9 +540,8 @@
         </main>
     </div>
 
-    <!-- HIDDEN app development page content -->
     <div id="app-development-page" class="hidden">
-         <main class="pt-[72px]">
+        <main class="pt-[72px]">
             <button class="back-to-main-btn fixed top-24 left-4 z-50 cta-btn rounded-full p-3 shadow-lg hover:scale-110 transition-transform back-btn-animation">
                 <i data-feather="arrow-left" class="text-white"></i>
             </button>
@@ -546,7 +554,7 @@
                     <div class="max-w-3xl mx-auto">
                        <h1 class="page-el text-4xl md:text-5xl lg:text-6xl font-bold font-space mb-4">
                            Mobile App Development
-                        </h1>
+                       </h1>
                         <p class="page-el text-lg md:text-xl mt-4">
                             Bringing your ideas to life with powerful, intuitive, and beautiful mobile applications.
                         </p>
@@ -601,9 +609,8 @@
         </main>
     </div>
     
-    <!-- HIDDEN ui/ux design page content -->
     <div id="ui-ux-design-page" class="hidden">
-         <main class="pt-[72px]">
+        <main class="pt-[72px]">
             <button class="back-to-main-btn fixed top-24 left-4 z-50 cta-btn rounded-full p-3 shadow-lg hover:scale-110 transition-transform back-btn-animation">
                 <i data-feather="arrow-left" class="text-white"></i>
             </button>
@@ -616,9 +623,9 @@
                     <div class="max-w-3xl mx-auto">
                        <h1 class="page-el text-4xl md:text-5xl lg:text-6xl font-bold font-space mb-4">
                             UI/UX Design Services
-                        </h1>
+                       </h1>
                         <p class="page-el text-lg md:text-xl mt-4">
-                           Creating intuitive, beautiful, and user-centric designs that drive engagement and satisfaction.
+                            Creating intuitive, beautiful, and user-centric designs that drive engagement and satisfaction.
                         </p>
                     </div>
                 </div>
@@ -671,24 +678,47 @@
         </main>
     </div>
 
-    <!-- Footer (shared by all views) -->
     <footer class="bg-slate-900 pt-16 pb-8 text-gray-400">
         <div class="container mx-auto px-4">
-            <div class="text-center">
-                <img src="logop.png" alt="MiniTech Logo" class="h-16 mx-auto mb-4">
-                <p class="max-w-xl mx-auto text-sm">
-                    MiniTech: Transforming Ideas into Digital Reality. Affordable solutions for startups and colleges. © 2025 All Rights Reserved.
-                </p>
-                 <div class="flex justify-center space-x-4 mt-6">
-                    <a href="https://www.facebook.com/share/p/14KSxT5De7h/" class="hover:text-white transition-colors"><i data-feather="facebook"></i></a>
-                    <a href="https://www.instagram.com/minitechofficial?igsh=MTBycGFqN3hyZGRhdA==" class="hover:text-white transition-colors"><i data-feather="instagram"></i></a>
-                    <a href="http://www.linkedin.com/in/" class="hover:text-white transition-colors"><i data-feather="linkedin"></i></a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 text-center md:text-left">
+                <div class="footer-col">
+                    <h3 class="font-space text-white text-xl font-bold mb-4">Mini-Tech</h3>
+                    <p class="text-sm leading-relaxed">Providing affordable digital solutions for startups, colleges, and businesses since 2025.</p>
                 </div>
+                <div class="footer-col">
+                    <h3 class="font-space text-white text-xl font-bold mb-4">Services</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" id="footer-dm-link" class="hover:text-blue-400 transition-colors">Digital Marketing</a></li>
+                        <li><a href="#" id="footer-web-link" class="hover:text-blue-400 transition-colors">Web Development</a></li>
+                        <li><a href="#" id="footer-app-link" class="hover:text-blue-400 transition-colors">App Development</a></li>
+                        <li><a href="#" id="footer-uiux-link" class="hover:text-blue-400 transition-colors">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="font-space text-white text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#hero" class="hover:text-blue-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-blue-400 transition-colors">About</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition-colors">Services</a></li>
+                        <li><a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-col">
+                    <h3 class="font-space text-white text-xl font-bold mb-4">Follow Us</h3>
+                      <div class="flex justify-center md:justify-start space-x-4">
+                         <a href="https://www.facebook.com/share/p/14KSxT5De7h/" class="hover:text-white transition-colors"><i data-feather="facebook"></i></a>
+                         <a href="https://www.instagram.com/minitechofficial?igsh=MTBycGFqN3hyZGRhdA==" class="hover:text-white transition-colors"><i data-feather="instagram"></i></a>
+                         <a href="http://www.linkedin.com/in/" class="hover:text-white transition-colors"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-sm">
+                <p>&copy; 2025 MiniTech. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
     
-    <a href="#hero" id="scroll-to-top-btn" class="fixed bottom-8 right-8 cta-btn p-3 rounded-full shadow-lg z-30 transform scale-0 transition-transform duration-300 ease-in-out hover:scale-110">
+    <a href="#hero" id="scroll-to-top-btn" class="fixed bottom-8 right-8 cta-btn p-3 rounded-full shadow-lg z-30 transform scale-0 transition-transform duration-300 ease-in-out hover:scale-110 animate-pulse-fab">
         <i data-feather="arrow-up" class="text-white w-6 h-6"></i>
     </a>
 
@@ -717,6 +747,11 @@
             const mobileNavWebLink = document.getElementById('mobile-nav-web-link');
             const mobileNavAppLink = document.getElementById('mobile-nav-app-link');
             const mobileNavUiUxLink = document.getElementById('mobile-nav-uiux-link');
+
+            const footerDmLink = document.getElementById('footer-dm-link');
+            const footerWebLink = document.getElementById('footer-web-link');
+            const footerAppLink = document.getElementById('footer-app-link');
+            const footerUiUxLink = document.getElementById('footer-uiux-link');
             
             const homeLink = document.getElementById('home-link');
             const mobileHomeLink = document.getElementById('mobile-home-link');
@@ -769,21 +804,27 @@
             navAppLink.addEventListener('click', (e) => { e.preventDefault(); showPage(appDevPage, 'page-el'); });
             navUiUxLink.addEventListener('click', (e) => { e.preventDefault(); showPage(uiUxPage, 'page-el'); });
 
+            // Footer Service Links
+            footerDmLink.addEventListener('click', (e) => { e.preventDefault(); showPage(dmPage, 'page-el'); });
+            footerWebLink.addEventListener('click', (e) => { e.preventDefault(); showPage(webDevPage, 'page-el'); });
+            footerAppLink.addEventListener('click', (e) => { e.preventDefault(); showPage(appDevPage, 'page-el'); });
+            footerUiUxLink.addEventListener('click', (e) => { e.preventDefault(); showPage(uiUxPage, 'page-el'); });
+
             // Home link
             homeLink.addEventListener('click', (e) => {
                 e.preventDefault();
                 showMainPage();
             });
-             mobileHomeLink.addEventListener('click', (e) => {
+              mobileHomeLink.addEventListener('click', (e) => {
                 e.preventDefault();
                 closeMobileMenu();
                 showMainPage();
             });
 
-            // Back buttons
+            // Back buttons on service pages
             backToMainBtns.forEach(btn => btn.addEventListener('click', showMainPage));
             
-            // CTA to Contact on service pages
+            // "Get a Free Quote" / CTA to Contact on service pages
             backToContactBtns.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -793,7 +834,6 @@
                     }, 100);
                 });
             });
-
 
             // --- GSAP Animations ---
             gsap.registerPlugin(ScrollTrigger);
@@ -828,6 +868,20 @@
                 ease: "power3.out"
             });
 
+            // Animation for new About section
+            gsap.from(".about-el", {
+                scrollTrigger: {
+                    trigger: "#about",
+                    start: "top 75%",
+                    toggleActions: "play none none none",
+                },
+                y: 60,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power3.out"
+            });
+
             gsap.from(".form-el", {
                 scrollTrigger: {
                     trigger: ".contact-form-container",
@@ -844,9 +898,7 @@
             // --- Scroll to Top Button Logic ---
             gsap.to(scrollToTopBtn, {
                 scrollTrigger: {
-                    trigger: "#services",
-                    trigger: "#footer",
-                    trigger: "#content",
+                    trigger: "#services", 
                     start: "top center",
                     end: "bottom top",
                     toggleClass: {targets: scrollToTopBtn, className: "scale-100"}
@@ -881,32 +933,41 @@
             mobileNavAppLink.addEventListener('click', (e) => { e.preventDefault(); closeMobileMenu(); showPage(appDevPage, 'page-el'); });
             mobileNavUiUxLink.addEventListener('click', (e) => { e.preventDefault(); closeMobileMenu(); showPage(uiUxPage, 'page-el'); });
             
-            // Handle regular mobile menu links and other smooth scroll links
-            document.querySelectorAll('a[href^="#"]').forEach(link => {
-                 link.addEventListener('click', (e) => {
-                    const targetId = link.getAttribute('href');
+            // --- Smooth Scrolling for all other Anchor Links ---
+            const scrollLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
 
-                    if (link.classList.contains('mobile-menu-link')) {
-                        // This condition is for #contact link in mobile menu
-                        if (targetId !== '#') { 
-                            e.preventDefault();
-                            showMainPage();
-                            closeMobileMenu();
-                            setTimeout(() => {
-                                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-                            }, 300);
-                        }
-                    } else if (targetId !== '#') {
-                        e.preventDefault();
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
+            scrollLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    const isServicePageLink = this.id.startsWith('mobile-nav-');
+
+                    if (isServicePageLink) {
+                        return; // Let the dedicated service page handlers work
+                    }
+                    
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+
+                    if (!targetElement) return;
+
+                    const isMainContentHidden = mainContent.classList.contains('hidden');
+                    
+                    if (isMainContentHidden) {
+                        showMainPage();
+                        setTimeout(() => {
                             targetElement.scrollIntoView({ behavior: 'smooth' });
-                        }
+                        }, 150);
+                    } else {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    
+                    if (this.closest('#mobile-menu')) {
+                        closeMobileMenu();
                     }
                 });
             });
 
-
+            // --- Form Submission to WhatsApp ---
             const contactForm = document.getElementById('contact-form');
             const formMessage = document.getElementById('form-message');
             contactForm.addEventListener('submit', (e) => {
@@ -937,4 +998,3 @@
     </script>
 </body>
 </html>
-
