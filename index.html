@@ -99,6 +99,21 @@
         .animate-throb {
             animation: throb 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
+        
+        @keyframes pulse-fab {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            }
+        }
+        .animate-pulse-fab {
+            animation: pulse-fab 2s infinite;
+        }
 
         #main-header {
             background-color: var(--dark-navy);
@@ -144,7 +159,7 @@
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 p-3 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" id="home-link" class="flex items-center space-x-3">
-                <img src="logop.png" alt="MiniTech Logo" class="h-12 rounded-full bg-slate-900">
+                <img src="logop.png" alt="MiniTech Logo" class="h-14">
                 <span class="text-white font-space font-bold text-xl">MiniTech</span>
             </a>
             <nav class="hidden md:flex space-x-8 items-center">
@@ -178,7 +193,7 @@
         <div class="p-5 flex flex-col h-full">
             <div class="flex justify-between items-center mb-10">
                  <a href="#" id="mobile-home-link" class="flex items-center space-x-2">
-                    <img src="logop.png" alt="MiniTech Logo" class="h-10 rounded-full bg-slate-900">
+                    <img src="logop.png" alt="MiniTech Logo" class="h-12">
                     <span class="text-white font-space font-bold text-lg">MiniTech</span>
                 </a>
                 <button id="mobile-menu-close-button">
@@ -320,7 +335,7 @@
                     </div>
                 </div>
             </section>
-
+            
             <section id="contact" class="py-20 md:py-28 bg-white relative">
                 <div class="absolute inset-0">
                     <img src="https://images.unsplash.com/photo-1528747045269-390a33c2a665?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover opacity-10">
@@ -673,7 +688,7 @@
         </div>
     </footer>
     
-    <a href="#hero" id="scroll-to-top-btn" class="fixed bottom-8 right-8 cta-btn p-3 rounded-full shadow-lg z-30 transform scale-0 transition-transform duration-300 ease-in-out hover:scale-110 animate-pulse-fab">
+    <a href="#hero" id="scroll-to-top-btn" class="fixed bottom-8 right-8 cta-btn p-3 rounded-full shadow-lg z-30 transform scale-0 transition-transform duration-300 ease-in-out hover:scale-110">
         <i data-feather="arrow-up" class="text-white w-6 h-6"></i>
     </a>
 
@@ -829,7 +844,9 @@
             // --- Scroll to Top Button Logic ---
             gsap.to(scrollToTopBtn, {
                 scrollTrigger: {
+                    trigger: "#services",
                     trigger: "#footer",
+                    trigger: "#content",
                     start: "top center",
                     end: "bottom top",
                     toggleClass: {targets: scrollToTopBtn, className: "scale-100"}
@@ -867,17 +884,24 @@
             // Handle regular mobile menu links and other smooth scroll links
             document.querySelectorAll('a[href^="#"]').forEach(link => {
                  link.addEventListener('click', (e) => {
-                    e.preventDefault();
                     const targetId = link.getAttribute('href');
 
                     if (link.classList.contains('mobile-menu-link')) {
-                        showMainPage();
-                        closeMobileMenu();
-                        setTimeout(() => {
-                            document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-                        }, 300);
-                    } else {
-                        document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+                        // This condition is for #contact link in mobile menu
+                        if (targetId !== '#') { 
+                            e.preventDefault();
+                            showMainPage();
+                            closeMobileMenu();
+                            setTimeout(() => {
+                                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+                            }, 300);
+                        }
+                    } else if (targetId !== '#') {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
                     }
                 });
             });
@@ -909,65 +933,6 @@
                 }, 5000);
             });
             
-            // --- Service Selector Logic ---
-            const serviceOptionsContainer = document.getElementById('service-options');
-            if (serviceOptionsContainer) {
-                const services = [
-                    'Digital Marketing', 'Web Development', 'App Development', 'UI/UX Design',
-                    'Content Creation', 'UGC Ads', 'Video Editing', 'Poster Design', 'SMM',
-                    'Instagram Marketing', 'Facebook Ads', 'LinkedIn Branding'
-                ];
-                services.forEach(service => {
-                    const label = document.createElement('label');
-                    label.className = 'flex items-center space-x-2 cursor-pointer p-3 bg-white rounded-lg shadow-sm border border-gray-200 hover:bg-blue-50 transition-colors';
-                    const checkbox = document.createElement('input');
-                    checkbox.type = 'checkbox';
-                    checkbox.value = service;
-                    checkbox.className = 'form-checkbox h-5 w-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500';
-                    const span = document.createElement('span');
-                    span.textContent = service;
-                    span.className = 'text-sm font-medium text-slate-700';
-                    label.appendChild(checkbox);
-                    label.appendChild(span);
-                    serviceOptionsContainer.appendChild(label);
-                });
-
-                const downloadBtn = document.getElementById('download-csv-btn');
-                const checkboxes = serviceOptionsContainer.querySelectorAll('input[type="checkbox"]');
-
-                function updateDownloadButtonState() {
-                    const anyChecked = [...checkboxes].some(cb => cb.checked);
-                    if (anyChecked) {
-                        downloadBtn.disabled = false;
-                        downloadBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                    } else {
-                        downloadBtn.disabled = true;
-                        downloadBtn.classList.add('opacity-50', 'cursor-not-allowed');
-                    }
-                }
-
-                checkboxes.forEach(cb => cb.addEventListener('change', updateDownloadButtonState));
-
-                downloadBtn.addEventListener('click', () => {
-                    const selectedServices = [...checkboxes]
-                        .filter(cb => cb.checked)
-                        .map(cb => cb.value);
-
-                    let csvContent = "data:text/csv;charset=utf-8,";
-                    csvContent += "Selected Services\r\n";
-                    selectedServices.forEach(service => {
-                        csvContent += `${service}\r\n`;
-                    });
-
-                    const encodedUri = encodeURI(csvContent);
-                    const link = document.createElement("a");
-                    link.setAttribute("href", encodedUri);
-                    link.setAttribute("download", "selected_services.csv");
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                });
-            }
         });
     </script>
 </body>
